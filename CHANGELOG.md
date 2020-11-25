@@ -2,6 +2,10 @@
 ## [Unreleased]
 
 
+<a name="v2.7.0"></a>
+## [v2.7.0] - 2020-11-25
+
+- Added more variables
 
 <a name="v2.6.5"></a>
 ## [v2.7.0] - 2020-06-07

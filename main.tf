@@ -1,16 +1,19 @@
 resource helm_release this {
-  count         = var.app["deploy"] ? 1 : 0
-  namespace     = var.namespace
-  repository    = var.repository
-  name          = var.app["name"]
-  version       = var.app["version"]
-  chart         = var.app["chart"]
-  force_update  = lookup(var.app, "force_update", true)
-  wait          = lookup(var.app, "wait", true)
-  recreate_pods = lookup(var.app, "recreate_pods", true)
-  max_history   = lookup(var.app, "max_history", 0)
-  lint          = lookup(var.app, "lint", true)
-  values        = var.values
+  count            = var.app["deploy"] ? 1 : 0
+  namespace        = var.namespace
+  repository       = var.repository
+  name             = var.app["name"]
+  version          = var.app["version"]
+  chart            = var.app["chart"]
+  force_update     = lookup(var.app, "force_update", true)
+  wait             = lookup(var.app, "wait", true)
+  recreate_pods    = lookup(var.app, "recreate_pods", true)
+  max_history      = lookup(var.app, "max_history", 0)
+  lint             = lookup(var.app, "lint", true)
+  create_namespace = lookup(var.app, "create_namespace", false)
+  skip_crds        = lookup(var.app, "skip_crds", false)
+  atomic           = lookup(var.app, "atomic", false)
+  values           = var.values
 
   dynamic "set" {
     iterator = item
