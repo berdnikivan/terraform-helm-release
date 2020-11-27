@@ -9,7 +9,7 @@ resource helm_release this {
   wait             = lookup(var.app, "wait", true)
   recreate_pods    = lookup(var.app, "recreate_pods", true)
   max_history      = lookup(var.app, "max_history", 0)
-  lint             = lookup(var.app, "lint", true)
+  lint             = lookup(var.app, "lint", false)
   create_namespace = lookup(var.app, "create_namespace", false)
   skip_crds        = lookup(var.app, "skip_crds", false)
   atomic           = lookup(var.app, "atomic", false)
