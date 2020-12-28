@@ -36,3 +36,8 @@ variable "repository" {
   description = "Helm repository"
   type        = string
 }
+
+variable "cluster_name" {
+  description = "EKS cluster name"
+  type        = string
+}
